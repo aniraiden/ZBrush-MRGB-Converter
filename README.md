@@ -74,7 +74,7 @@ Aniraiden
 
 # ZBrush MRGB → Vertex Color Converter
 
-A GUI tool for converting MRGB-format vertex color data from ZBrush-exported OBJ files into standard RGB floating-point vertex colors, compatible with KeyShot, Maya, Blender, and other DCC applications.
+A GUI tool for converting MRGB-format vertex color data from ZBrush-exported OBJ files into standard RGB floating-point vertex colors, compatible with KeyShot, Blender, and other DCC applications.
 
 ## Features
 
@@ -111,7 +111,7 @@ python convert_mrgb_v5.py
 
 ### Option 2: Use Pre-built EXE
 
-Run `dist/MRGB_Converter.exe` directly (if already built)
+Download and run the pre-built `MRGB_Converter.exe` from [Releases](https://github.com/aniraiden/ZBrush-MRGB-Converter/releases)
 
 ### Build EXE Yourself
 

@@ -67,3 +67,75 @@ MIT License
 ## 作者
 
 Aniraiden
+
+---
+
+# ZBrush MRGB → Vertex Color Converter
+
+A GUI tool for converting MRGB-format vertex color data from ZBrush-exported OBJ files into standard RGB floating-point vertex colors, compatible with KeyShot, Maya, Blender, and other DCC applications.
+
+## Features
+
+- Reads ZBrush-exported OBJ files with `#MRGB` vertex color data
+- Converts MRGB hex colors to standard RGB float format (0.0 ~ 1.0)
+- Automatically strips `mtllib` and `usemtl` references (v5)
+- Uses `mmap` streaming for efficient large-file conversion (v5)
+- Clean tkinter GUI with file browser support
+- Progress bar for conversion progress (v5)
+
+## Version Overview
+
+| File | Description |
+|------|-------------|
+| `MRGB_Converter.py` | Initial GUI version |
+| `convert_mrgb_v2.py` | Iterative version |
+| `convert_mrgb_v3.py` | Iterative version |
+| `convert_mrgb_v4.py` | Iterative version |
+| **`convert_mrgb_v5.py`** | **Latest** — mmap streaming, progress bar, best performance |
+| `MRGB_Converter.spec` | PyInstaller build config (based on v5) |
+
+## Usage
+
+### Option 1: Run Python Script Directly
+
+1. Ensure Python 3.x is installed (no extra dependencies, standard library tkinter only)
+
+2. Run the latest version:
+```bash
+python convert_mrgb_v5.py
+```
+
+3. Select the input ZBrush OBJ file in the GUI and click "Start Conversion"
+
+### Option 2: Use Pre-built EXE
+
+Run `dist/MRGB_Converter.exe` directly (if already built)
+
+### Build EXE Yourself
+
+```bash
+pip install pyinstaller
+cd MRGB_Converter
+pyinstaller MRGB_Converter.spec
+```
+
+The executable will be output to the `dist/` directory.
+
+## How It Works
+
+In ZBrush-exported OBJ files, vertex colors are stored in blocks starting with `#MRGB`, encoded as hexadecimal values (e.g., `FF7F3F80`). This tool:
+
+1. Parses the `#MRGB` data block and extracts hexadecimal color values
+2. Converts each color's R, G, B channels to 0.0 ~ 1.0 floating-point numbers
+3. Appends color values to the corresponding `v x y z` vertex lines, producing `v x y z r g b` format
+4. Removes original MTL material references
+
+This allows OBJ files to be correctly recognized for vertex colors by KeyShot, Maya, Blender, and other software.
+
+## License
+
+MIT License
+
+## Author
+
+Aniraiden

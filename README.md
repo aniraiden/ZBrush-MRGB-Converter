@@ -1,6 +1,8 @@
 # ZBrush MRGB → 顶点色转换器
 
-一个用于将 ZBrush 导出的 OBJ 文件中 MRGB 格式的顶点色数据转换为通用 RGB 浮点顶点色的 GUI 工具，适用于 KeyShot、Maya、Blender 等 DCC 软件。
+[English Version](#zbrush-mrgb--vertex-color-converter)
+
+一个用于将 ZBrush 导出的 OBJ 文件中 MRGB 格式的顶点色数据转换为通用 RGB 浮点顶点色的 GUI 工具，适用于 KeyShot、Blender 等 DCC 软件。
 
 ## 功能
 
@@ -37,7 +39,7 @@ python convert_mrgb_v5.py
 
 ### 方式二：使用打包好的 EXE
 
-直接运行 `dist/MRGB_Converter.exe`（如果已构建）
+直接运行 Releases 提供的打包好的 MRGB_Converter.exe
 
 ### 自行打包 EXE
 

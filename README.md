@@ -1,5 +1,7 @@
 # ZBrush MRGB → 顶点色转换器
 
+![cover](pic/cover.png)
+
 [English Version](#zbrush-mrgb--vertex-color-converter)
 
 一个用于将 ZBrush 导出的 OBJ 文件中 MRGB 格式的顶点色数据转换为通用 RGB 浮点顶点色的 GUI 工具，适用于 KeyShot、Blender 等 DCC 软件。
